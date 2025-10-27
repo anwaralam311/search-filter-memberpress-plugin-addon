@@ -102,7 +102,44 @@ class Search_Filter_MemberPress {
         add_action('admin_notices', array($this, 'plugin_activated_notice'));
         
     }
-
+    
+    private function load_dependencies() {
+        $includes_path = SFMP_PLUGIN_PATH . 'includes/';
+    
+        $files = array(
+            'class-cpt-registration',
+            'class-taxonomy-setup',
+            'class-dummy-setup',
+            'class-sample-data',
+            // We'll add other files as we create them
+        );
+    
+        foreach ($files as $file) {
+            $file_path = $includes_path . $file . '.php';
+            if (file_exists($file_path)) {
+                require_once $file_path;
+            }
+        }
+    }
+    
+    private function initialize_components() {
+        // Initialize only if classes exist
+        if (class_exists('SFMP_CPT_Registration')) {
+            SFMP_CPT_Registration::get_instance();
+        }
+        
+        if (class_exists('SFMP_Taxonomy_Setup')) {
+            SFMP_Taxonomy_Setup::get_instance();
+        }
+    
+        if (class_exists('SFMP_Dummy_Setup')) {
+            SFMP_Dummy_Setup::get_instance();
+        }
+    
+        if (class_exists('SFMP_Sample_Data')) {
+            SFMP_Sample_Data::get_instance();
+        }
+    }
     private function load_dependencies() {
         $includes_path = SFMP_PLUGIN_PATH . 'includes/';
 
