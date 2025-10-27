@@ -108,6 +108,8 @@ class Search_Filter_MemberPress {
             'class-sample-data',
             'class-admin-metaboxes',
             'class-settings-page',
+            'class-memberpress-integration',
+            'class-frontend-archive',
             // We'll add other files as we create them
         );
 
@@ -140,6 +142,13 @@ class Search_Filter_MemberPress {
         }
         if (class_exists('SFMP_Settings_Page')) {
             SFMP_Settings_Page::get_instance();
+        }
+        if (class_exists('SFMP_MemberPress_Integration')) {
+            SFMP_MemberPress_Integration::get_instance();
+        }
+    
+        if (class_exists('SFMP_Frontend_Archive')) {
+            SFMP_Frontend_Archive::get_instance();
         }
     }
 
