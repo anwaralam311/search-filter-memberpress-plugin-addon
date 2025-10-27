@@ -1,0 +1,67 @@
+/* Search & Filter for MemberPress - Admin Styles */
+
+.sfmp-meta-field {
+    margin-bottom: 20px;
+}
+
+.sfmp-meta-field label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.sfmp-meta-field .description {
+    font-style: italic;
+    color: #666;
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.sfmp-tab-content h3 {
+    background: #f8f9fa;
+    padding: 10px 15px;
+    margin: 20px 0 10px 0;
+    border-left: 4px solid #2271b1;
+    font-size: 14px;
+}
+
+.sfmp-audio-preview audio {
+    margin-bottom: 10px;
+}
+
+.sfmp-upload-audio,
+.sfmp-remove-audio {
+    margin-bottom: 5px;
+}
+
+/* Checkbox list styling */
+.sfmp-meta-field input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.sfmp-meta-field label label {
+    font-weight: normal;
+    margin-bottom: 3px;
+}
+
+/* Required field indicator */
+.sfmp-required::after {
+    content: " *";
+    color: #d63638;
+}
+
+/* Meta box styling */
+#sfmp_case_content_tabs .inside {
+    padding: 0;
+}
+
+#sfmp_case_content_tabs .sfmp-tab-content {
+    padding: 0 12px 12px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 782px) {
+    .sfmp-meta-field .widefat {
+        width: 100%;
+    }
+}

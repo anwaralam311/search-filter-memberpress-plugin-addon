@@ -106,6 +106,8 @@ class Search_Filter_MemberPress {
             'class-taxonomy-setup',
             'class-dummy-setup',
             'class-sample-data',
+            'class-admin-metaboxes',
+            'class-settings-page',
             // We'll add other files as we create them
         );
 
@@ -132,6 +134,12 @@ class Search_Filter_MemberPress {
     
         if (class_exists('SFMP_Sample_Data')) {
             SFMP_Sample_Data::get_instance();
+        }
+        if (class_exists('SFMP_Admin_Metaboxes')) {
+            SFMP_Admin_Metaboxes::get_instance();
+        }
+        if (class_exists('SFMP_Settings_Page')) {
+            SFMP_Settings_Page::get_instance();
         }
     }
 
